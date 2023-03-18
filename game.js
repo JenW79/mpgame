@@ -15,6 +15,8 @@ clickButton.addEventListener('click', function() {
       document.getElementById('player2Score').textContent = player2Score;
     }
     isPlayer1Turn = !isPlayer1Turn;
+    const currentPlayerName = isPlayer1Turn ? player1Name : player2Name;
+    document.getElementById('currentPlayer').textContent = currentPlayerName;
     if (player1Score === totalClicksNeeded) {
       alert('Player 1 Wins!');
     } else if (player2Score === totalClicksNeeded) {
