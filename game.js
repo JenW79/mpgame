@@ -2,14 +2,11 @@ let player1Score = 0;
 let player2Score = 0;
 const totalClicksNeeded = 1000;
 
-let isPlayer1Turn; // declare the variable outside the event listener
+let isPlayer1Turn = true;
 
 const clickButton = document.getElementById('clickButton');
 clickButton.addEventListener('click', function() {
   if (player1Score < totalClicksNeeded && player2Score < totalClicksNeeded) {
-    if (isPlayer1Turn === undefined) { // initialize the variable with a boolean value
-      isPlayer1Turn = Math.random() < 0.5;
-    }
     if (isPlayer1Turn) {
       player1Score++;
       document.getElementById('player1Score').textContent = player1Score;
@@ -25,3 +22,12 @@ clickButton.addEventListener('click', function() {
     }
   }
 });
+
+const player1Name = prompt("Player 1, please enter your name:");
+if (player1Name) {
+  document.getElementById('player1Name').textContent = player1Name;
+}
+const player2Name = prompt("Player 2, please enter your name:");
+if (player2Name) {
+  document.getElementById('player2Name').textContent = player2Name;
+}
